@@ -1,0 +1,1 @@
+import type {MetadataRoute} from "next";import release from "@/config/release.json";import {site} from "@/lib/site";export const dynamic="force-static";export default function robots():MetadataRoute.Robots{const live=release.allowIndexing;return {rules:live?{userAgent:"*",allow:"/"}:{userAgent:"*",disallow:"/"},sitemap:live?`${site.url}/sitemap.xml`:undefined}}

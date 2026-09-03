@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "seo-geo.game-entity.v1",
+  "requiredTypes": [
+    "WebSite",
+    "Organization",
+    "VideoGame"
+  ],
+  "website": {
+    "entityId": "https://sandboxofelementsguide.com/#website",
+    "name": "Sandbox of Elements Guide",
+    "url": "https://sandboxofelementsguide.com/"
+  },
+  "organization": {
+    "entityId": "https://sandboxofelementsguide.com/#organization",
+    "name": "Sandbox of Elements Guide Editorial Team",
+    "url": "https://sandboxofelementsguide.com/about/",
+    "fictionalExpertPersonasAllowed": false
+  },
+  "game": {
+    "schemaType": "VideoGame",
+    "entityId": "https://sandboxofelementsguide.com/#video-game",
+    "name": "Sandbox of Elements",
+    "url": "https://poki.com/en/g/sandbox-of-elements",
+    "publisher": "Flagwin"
+  },
+  "crawlerPolicy": {
+    "Googlebot": "allow",
+    "OAI-SearchBot": "allow",
+    "PerplexityBot": "allow"
+  }
+}

@@ -1,0 +1,311 @@
+{
+  "schemaVersion": "seo-geo.structured-data.v1",
+  "pages": [
+    {
+      "route": "/guides/sandbox-elements-beginner-route/",
+      "baseTypes": [
+        "Article",
+        "BreadcrumbList"
+      ],
+      "aboutEntityId": "https://sandboxofelementsguide.com/#video-game",
+      "articleAuthorEntityId": "https://sandboxofelementsguide.com/#organization",
+      "visibleDataSourceRef": "lib/guides.ts",
+      "jsonLdDataSourceRef": "lib/guides.ts",
+      "visibleContentRefs": [
+        "quickAnswer",
+        "sections",
+        "sources"
+      ],
+      "conditionalTypes": []
+    },
+    {
+      "route": "/guides/sandbox-elements-reactions-explained/",
+      "baseTypes": [
+        "Article",
+        "BreadcrumbList"
+      ],
+      "aboutEntityId": "https://sandboxofelementsguide.com/#video-game",
+      "articleAuthorEntityId": "https://sandboxofelementsguide.com/#organization",
+      "visibleDataSourceRef": "lib/guides.ts",
+      "jsonLdDataSourceRef": "lib/guides.ts",
+      "visibleContentRefs": [
+        "quickAnswer",
+        "sections",
+        "sources"
+      ],
+      "conditionalTypes": []
+    },
+    {
+      "route": "/guides/element-database/",
+      "baseTypes": [
+        "Article",
+        "BreadcrumbList"
+      ],
+      "aboutEntityId": "https://sandboxofelementsguide.com/#video-game",
+      "articleAuthorEntityId": "https://sandboxofelementsguide.com/#organization",
+      "visibleDataSourceRef": "lib/guides.ts",
+      "jsonLdDataSourceRef": "lib/guides.ts",
+      "visibleContentRefs": [
+        "quickAnswer",
+        "sections",
+        "sources"
+      ],
+      "conditionalTypes": []
+    },
+    {
+      "route": "/guides/secret-reactions/",
+      "baseTypes": [
+        "Article",
+        "BreadcrumbList"
+      ],
+      "aboutEntityId": "https://sandboxofelementsguide.com/#video-game",
+      "articleAuthorEntityId": "https://sandboxofelementsguide.com/#organization",
+      "visibleDataSourceRef": "lib/guides.ts",
+      "jsonLdDataSourceRef": "lib/guides.ts",
+      "visibleContentRefs": [
+        "quickAnswer",
+        "sections",
+        "sources"
+      ],
+      "conditionalTypes": []
+    },
+    {
+      "route": "/guides/failed-combinations/",
+      "baseTypes": [
+        "Article",
+        "BreadcrumbList"
+      ],
+      "aboutEntityId": "https://sandboxofelementsguide.com/#video-game",
+      "articleAuthorEntityId": "https://sandboxofelementsguide.com/#organization",
+      "visibleDataSourceRef": "lib/guides.ts",
+      "jsonLdDataSourceRef": "lib/guides.ts",
+      "visibleContentRefs": [
+        "quickAnswer",
+        "sections",
+        "sources"
+      ],
+      "conditionalTypes": []
+    },
+    {
+      "route": "/guides/controls-and-devices/",
+      "baseTypes": [
+        "Article",
+        "BreadcrumbList"
+      ],
+      "aboutEntityId": "https://sandboxofelementsguide.com/#video-game",
+      "articleAuthorEntityId": "https://sandboxofelementsguide.com/#organization",
+      "visibleDataSourceRef": "lib/guides.ts",
+      "jsonLdDataSourceRef": "lib/guides.ts",
+      "visibleContentRefs": [
+        "quickAnswer",
+        "sections",
+        "sources"
+      ],
+      "conditionalTypes": []
+    },
+    {
+      "route": "/guides/element-unlock-order/",
+      "baseTypes": [
+        "Article",
+        "BreadcrumbList"
+      ],
+      "aboutEntityId": "https://sandboxofelementsguide.com/#video-game",
+      "articleAuthorEntityId": "https://sandboxofelementsguide.com/#organization",
+      "visibleDataSourceRef": "lib/guides.ts",
+      "jsonLdDataSourceRef": "lib/guides.ts",
+      "visibleContentRefs": [
+        "quickAnswer",
+        "sections",
+        "sources"
+      ],
+      "conditionalTypes": []
+    },
+    {
+      "route": "/guides/basic-fire-water-reactions/",
+      "baseTypes": [
+        "Article",
+        "BreadcrumbList"
+      ],
+      "aboutEntityId": "https://sandboxofelementsguide.com/#video-game",
+      "articleAuthorEntityId": "https://sandboxofelementsguide.com/#organization",
+      "visibleDataSourceRef": "lib/guides.ts",
+      "jsonLdDataSourceRef": "lib/guides.ts",
+      "visibleContentRefs": [
+        "quickAnswer",
+        "sections",
+        "sources"
+      ],
+      "conditionalTypes": []
+    },
+    {
+      "route": "/guides/plant-and-life-experiments/",
+      "baseTypes": [
+        "Article",
+        "BreadcrumbList"
+      ],
+      "aboutEntityId": "https://sandboxofelementsguide.com/#video-game",
+      "articleAuthorEntityId": "https://sandboxofelementsguide.com/#organization",
+      "visibleDataSourceRef": "lib/guides.ts",
+      "jsonLdDataSourceRef": "lib/guides.ts",
+      "visibleContentRefs": [
+        "quickAnswer",
+        "sections",
+        "sources"
+      ],
+      "conditionalTypes": []
+    },
+    {
+      "route": "/guides/metal-and-electricity/",
+      "baseTypes": [
+        "Article",
+        "BreadcrumbList"
+      ],
+      "aboutEntityId": "https://sandboxofelementsguide.com/#video-game",
+      "articleAuthorEntityId": "https://sandboxofelementsguide.com/#organization",
+      "visibleDataSourceRef": "lib/guides.ts",
+      "jsonLdDataSourceRef": "lib/guides.ts",
+      "visibleContentRefs": [
+        "quickAnswer",
+        "sections",
+        "sources"
+      ],
+      "conditionalTypes": []
+    },
+    {
+      "route": "/guides/temperature-and-cooling/",
+      "baseTypes": [
+        "Article",
+        "BreadcrumbList"
+      ],
+      "aboutEntityId": "https://sandboxofelementsguide.com/#video-game",
+      "articleAuthorEntityId": "https://sandboxofelementsguide.com/#organization",
+      "visibleDataSourceRef": "lib/guides.ts",
+      "jsonLdDataSourceRef": "lib/guides.ts",
+      "visibleContentRefs": [
+        "quickAnswer",
+        "sections",
+        "sources"
+      ],
+      "conditionalTypes": []
+    },
+    {
+      "route": "/guides/state-change-experiments/",
+      "baseTypes": [
+        "Article",
+        "BreadcrumbList"
+      ],
+      "aboutEntityId": "https://sandboxofelementsguide.com/#video-game",
+      "articleAuthorEntityId": "https://sandboxofelementsguide.com/#organization",
+      "visibleDataSourceRef": "lib/guides.ts",
+      "jsonLdDataSourceRef": "lib/guides.ts",
+      "visibleContentRefs": [
+        "quickAnswer",
+        "sections",
+        "sources"
+      ],
+      "conditionalTypes": []
+    },
+    {
+      "route": "/guides/explosion-and-chain-reactions/",
+      "baseTypes": [
+        "Article",
+        "BreadcrumbList"
+      ],
+      "aboutEntityId": "https://sandboxofelementsguide.com/#video-game",
+      "articleAuthorEntityId": "https://sandboxofelementsguide.com/#organization",
+      "visibleDataSourceRef": "lib/guides.ts",
+      "jsonLdDataSourceRef": "lib/guides.ts",
+      "visibleContentRefs": [
+        "quickAnswer",
+        "sections",
+        "sources"
+      ],
+      "conditionalTypes": []
+    },
+    {
+      "route": "/guides/rare-element-checklist/",
+      "baseTypes": [
+        "Article",
+        "BreadcrumbList"
+      ],
+      "aboutEntityId": "https://sandboxofelementsguide.com/#video-game",
+      "articleAuthorEntityId": "https://sandboxofelementsguide.com/#organization",
+      "visibleDataSourceRef": "lib/guides.ts",
+      "jsonLdDataSourceRef": "lib/guides.ts",
+      "visibleContentRefs": [
+        "quickAnswer",
+        "sections",
+        "sources"
+      ],
+      "conditionalTypes": []
+    },
+    {
+      "route": "/guides/experiment-worksheet/",
+      "baseTypes": [
+        "Article",
+        "BreadcrumbList"
+      ],
+      "aboutEntityId": "https://sandboxofelementsguide.com/#video-game",
+      "articleAuthorEntityId": "https://sandboxofelementsguide.com/#organization",
+      "visibleDataSourceRef": "lib/guides.ts",
+      "jsonLdDataSourceRef": "lib/guides.ts",
+      "visibleContentRefs": [
+        "quickAnswer",
+        "sections",
+        "sources"
+      ],
+      "conditionalTypes": []
+    },
+    {
+      "route": "/guides/reset-and-retest/",
+      "baseTypes": [
+        "Article",
+        "BreadcrumbList"
+      ],
+      "aboutEntityId": "https://sandboxofelementsguide.com/#video-game",
+      "articleAuthorEntityId": "https://sandboxofelementsguide.com/#organization",
+      "visibleDataSourceRef": "lib/guides.ts",
+      "jsonLdDataSourceRef": "lib/guides.ts",
+      "visibleContentRefs": [
+        "quickAnswer",
+        "sections",
+        "sources"
+      ],
+      "conditionalTypes": []
+    },
+    {
+      "route": "/guides/update-and-retest-log/",
+      "baseTypes": [
+        "Article",
+        "BreadcrumbList"
+      ],
+      "aboutEntityId": "https://sandboxofelementsguide.com/#video-game",
+      "articleAuthorEntityId": "https://sandboxofelementsguide.com/#organization",
+      "visibleDataSourceRef": "lib/guides.ts",
+      "jsonLdDataSourceRef": "lib/guides.ts",
+      "visibleContentRefs": [
+        "quickAnswer",
+        "sections",
+        "sources"
+      ],
+      "conditionalTypes": []
+    },
+    {
+      "route": "/guides/verified-recipes-by-input/",
+      "baseTypes": [
+        "Article",
+        "BreadcrumbList"
+      ],
+      "aboutEntityId": "https://sandboxofelementsguide.com/#video-game",
+      "articleAuthorEntityId": "https://sandboxofelementsguide.com/#organization",
+      "visibleDataSourceRef": "lib/guides.ts",
+      "jsonLdDataSourceRef": "lib/guides.ts",
+      "visibleContentRefs": [
+        "quickAnswer",
+        "sections",
+        "sources"
+      ],
+      "conditionalTypes": []
+    }
+  ]
+}

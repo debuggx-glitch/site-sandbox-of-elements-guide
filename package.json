@@ -1,0 +1,33 @@
+{
+  "name": "sandboxofelementsguide",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@11.16.0",
+  "scripts": {
+    "dev": "next dev",
+    "build:preview": "node scripts/verify-site-release.mjs && node scripts/verify-adsterra-config.mjs && node scripts/verify-content-assets.mjs && node scripts/verify-seo-metadata.mjs && node scripts/verify-seo-geo-release.mjs && next build --webpack",
+    "build": "node scripts/verify-site-release.mjs && node scripts/verify-adsterra-config.mjs && node scripts/verify-content-assets.mjs && node scripts/verify-content-quality.mjs && node scripts/verify-seo-metadata.mjs && node scripts/verify-seo-geo-release.mjs && next build --webpack",
+    "typecheck": "tsc --noEmit",
+    "verify:release-config": "node scripts/verify-site-release.mjs",
+    "verify:ads": "node scripts/verify-adsterra-config.mjs",
+    "verify:content": "node scripts/verify-content-assets.mjs",
+    "verify:quality": "node scripts/verify-content-quality.mjs",
+    "verify:seo-metadata": "node scripts/verify-seo-metadata.mjs",
+    "check": "pnpm typecheck && pnpm build:preview",
+    "check:release": "pnpm typecheck && pnpm build",
+    "verify:seo-geo": "node scripts/verify-seo-geo-release.mjs"
+  },
+  "dependencies": {
+    "@vercel/analytics": "2.0.1",
+    "@vercel/speed-insights": "2.0.0",
+    "next": "16.3.0",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "26.2.0",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.3",
+    "typescript": "7.0.2"
+  }
+}

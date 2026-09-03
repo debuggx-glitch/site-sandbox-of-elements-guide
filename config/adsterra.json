@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "adsterra.public-config.v1",
+  "siteId": "site_sandbox_of_elements_database_001",
+  "domain": "sandboxofelementsguide.com",
+  "placements": {
+    "socialBar": {"placementId":"31070662","format":"social_bar","src":"https://incorporatebreadthave.com/c3/cd/1f/c3cd1f0b6f10c3d1a7ac15c47c0bf0e7.js"},
+    "homeBannerDesktop": {"placementId":"31070703","format":"banner","src":"https://incorporatebreadthave.com/8650dd47595672127eab0330717c690e/invoke.js","key":"8650dd47595672127eab0330717c690e","width":728,"height":90},
+    "homeBannerMobile": {"placementId":"31070702","format":"banner","src":"https://incorporatebreadthave.com/b1d5ab24df183eeefa91ae7619e01914/invoke.js","key":"b1d5ab24df183eeefa91ae7619e01914","width":320,"height":50},
+    "guideNative": {"placementId":"31070661","format":"native_banner","src":"https://incorporatebreadthave.com/3e7df0e710ce8075f87398f7d3f4d341/invoke.js","containerId":"container-3e7df0e710ce8075f87398f7d3f4d341"}
+  }
+}
