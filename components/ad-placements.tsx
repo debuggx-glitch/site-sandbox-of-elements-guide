@@ -42,6 +42,21 @@ export function HomeAd() {
   return <aside className="ad-slot" ref={container} data-ad-placement={name}><small>Advertisement</small><BannerRuntime placement={placement} onLoad={funnel.onScriptLoad} onError={funnel.onScriptError}/></aside>;
 }
 
+export function HomeSideAd() {
+  const [desktop, setDesktop] = useState<boolean | null>(null);
+  const container = useRef<HTMLElement>(null);
+  useEffect(() => {
+    const media = window.matchMedia("(min-width: 1280px)");
+    const update = () => setDesktop(media.matches);
+    update(); media.addEventListener("change", update);
+    return () => media.removeEventListener("change", update);
+  }, []);
+  const placement = desktop === true ? adsterraConfig.placements.homeSideDesktop : null;
+  const funnel = useAdFunnel({siteId:adsterraConfig.siteId,placementName:"home_side_desktop",placement,viewRef:container});
+  if (!placement) return null;
+  return <aside className="ad-slot home-side-ad" ref={container} data-ad-placement="home_side_desktop"><small>Advertisement</small><BannerRuntime placement={placement} onLoad={funnel.onScriptLoad} onError={funnel.onScriptError}/></aside>;
+}
+
 export function GuideAd() {
   const placement = adsterraConfig.placements.guideNative;
   const host = useRef<HTMLDivElement>(null);

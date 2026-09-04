@@ -2,7 +2,7 @@ import {readFileSync} from "node:fs";
 
 const config = JSON.parse(readFileSync(new URL("../config/adsterra.json", import.meta.url), "utf8"));
 const fail = (message) => { console.error(`ADSTERRA CONFIG GATE: BLOCKED - ${message}`); process.exit(1); };
-const required = ["socialBar", "homeBannerDesktop", "homeBannerMobile", "guideNative"];
+const required = ["socialBar", "homeBannerDesktop", "homeBannerMobile", "homeSideDesktop", "guideNative"];
 if (config.schemaVersion !== "adsterra.public-config.v1") fail("unsupported schemaVersion");
 if (!config.siteId || !config.domain) fail("siteId and domain are required");
 for (const name of required) {
@@ -11,10 +11,11 @@ for (const name of required) {
   if (!placement.placementId || !placement.src) fail(`${name} requires placementId and src`);
   if (!placement.src.startsWith("https://")) fail(`${name}.src must use HTTPS`);
 }
-for (const name of ["homeBannerDesktop", "homeBannerMobile"]) {
+for (const name of ["homeBannerDesktop", "homeBannerMobile", "homeSideDesktop"]) {
   const placement = config.placements[name];
   if (!placement.key || !placement.width || !placement.height) fail(`${name} requires key, width, and height`);
 }
+if (config.placements.homeSideDesktop.width !== 300 || config.placements.homeSideDesktop.height !== 250) fail("homeSideDesktop must be 300x250");
 if (!config.placements.guideNative.containerId) fail("guideNative.containerId is required");
 const sources = [
   readFileSync(new URL("../components/ad-funnel.ts", import.meta.url), "utf8"),
