@@ -1,3 +1,28 @@
-import type {Metadata} from "next";import Image from "next/image";import Link from "next/link";import {HomeAd} from "@/components/ad-placements";import {guides} from "@/lib/guides";import {site} from "@/lib/site";
+import type {Metadata} from "next";
+import Image from "next/image";
+import Link from "next/link";
+import {HomeAd} from "@/components/ad-placements";
+import {guides} from "@/lib/guides";
+import {site} from "@/lib/site";
+
 export const metadata:Metadata={alternates:{canonical:"/"}};
-export default function Home(){return <main><section className="hero"><div><p className="kicker">INDEPENDENT ELEMENT LAB</p><h1>Test one element at a time. Keep the reaction you can reproduce.</h1><p>{site.description}</p><Link className="cta" href={`/guides/${guides[0].slug}/`}>Start with the first guide →</Link></div><figure><Image src={site.visual} width={site.visualWidth} height={site.visualHeight} sizes="(max-width: 780px) 100vw, 44vw" priority alt={site.visualAlt}/><figcaption>Official platform screenshot; live values may differ by version.</figcaption></figure></section><section className="status"><p><b>Guide library</b><span>{guides.length} launch articles</span></p><p><b>Evidence</b><span>Official-source, versioned, no invented values</span></p><p><b>Checked</b><span>September 4, 2026</span></p></section><HomeAd/><section className="library"><div><p className="kicker">FIELD LIBRARY</p><h2>Choose the exact task in front of you.</h2></div><div>{guides.map((guide,index)=><article key={guide.slug}><span>{String(index+1).padStart(2,"0")}</span><p>{guide.category}</p><h3><Link href={`/guides/${guide.slug}/`}>{guide.title}</Link></h3><p>{guide.description}</p></article>)}</div></section></main>}
+
+export default function Home(){
+  return <main className="lab-home">
+    <section className="lab-hero">
+      <div className="lab-console">
+        <p className="eyebrow">Independent reaction notebook</p>
+        <h1>Build a cleaner<br/><em>element lab.</em></h1>
+        <p className="intro">{site.description}</p>
+        <div className="lab-actions"><Link className="primary-action" href={`/guides/${guides[0].slug}/`}>Run experiment 01</Link><a className="text-action" href="#experiments">Browse all notes ↓</a></div>
+        <dl className="lab-readout"><div><dt>Notes</dt><dd>{guides.length}</dd></div><div><dt>Method</dt><dd>One variable</dd></div><div><dt>Rechecked</dt><dd>Sep 04</dd></div></dl>
+      </div>
+      <figure className="specimen-card"><span className="specimen-label">Live specimen / 001</span><Image src={site.visual} width={site.visualWidth} height={site.visualHeight} sizes="(max-width: 800px) 92vw, 42vw" priority alt={site.visualAlt}/><figcaption>Official game image · reactions can change with the live build</figcaption></figure>
+    </section>
+    <HomeAd/>
+    <section className="experiment-index" id="experiments">
+      <header className="index-heading"><p className="eyebrow">Experiment index</p><h2>Pick the reaction you need to reproduce.</h2><p>Each note keeps inputs, expected output, stop conditions and unknowns visible.</p></header>
+      <div className="experiment-grid">{guides.map((guide,index)=><article key={guide.slug}><div className="experiment-no">E-{String(index+1).padStart(2,"0")}</div><p className="experiment-type">{guide.category}</p><h3><Link href={`/guides/${guide.slug}/`}>{guide.title}</Link></h3><p>{guide.description}</p><Link className="card-link" href={`/guides/${guide.slug}/`}>Open lab note <span>↗</span></Link></article>)}</div>
+    </section>
+  </main>;
+}
