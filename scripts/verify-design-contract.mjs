@@ -36,5 +36,9 @@ const layout=fs.readFileSync(path.join(root,"app/layout.tsx"),"utf8");
 if(!home.includes("<HomeAd/"))fail("home active ad is not rendered");
 if(!guide.includes("<GuideAd/"))fail("guide active ad is not rendered");
 if(!layout.includes("<SocialBar/"))fail("global social active ad is not rendered");
+if(home.indexOf("<HomeAd/")>home.indexOf("<section"))fail("home primary ad must render before the hero");
+const guideAdIndex=guide.indexOf("<GuideAd/");
+const leadVisualIndex=guide.indexOf('className="lead-visual"');
+const longFormIndex=guide.indexOf("guide.sections.map",guideAdIndex);
+if(guideAdIndex<0||leadVisualIndex<guideAdIndex||longFormIndex<leadVisualIndex)fail("guide order must be answer-first, primary ad, lead visual, then long-form sections");
 console.log(`DESIGN CONTRACT GATE: PASS family=${design.templateFamilyId} ads=${design.adInventory.filter(slot=>slot.status==="active").length} active+${design.adInventory.filter(slot=>slot.status==="planned_inactive").length} planned`);
-

@@ -9,6 +9,7 @@ export const metadata:Metadata={alternates:{canonical:"/"}};
 
 export default function Home(){
   return <main className="lab-home">
+    <HomeAd/>
     <section className="lab-hero">
       <div className="lab-console">
         <p className="eyebrow">Independent reaction notebook</p>
@@ -19,7 +20,6 @@ export default function Home(){
       </div>
       <figure className="specimen-card"><span className="specimen-label">Live specimen / 001</span><Image src={site.visual} width={site.visualWidth} height={site.visualHeight} sizes="(max-width: 800px) 92vw, 42vw" priority alt={site.visualAlt}/><figcaption>Official game image · reactions can change with the live build</figcaption></figure>
     </section>
-    <HomeAd/>
     <section className="experiment-index" id="experiments">
       <header className="index-heading"><p className="eyebrow">Experiment index</p><h2>Pick the reaction you need to reproduce.</h2><p>Each note keeps inputs, expected output, stop conditions and unknowns visible.</p></header>
       <div className="experiment-grid">{guides.map((guide,index)=><article key={guide.slug}><div className="experiment-no">E-{String(index+1).padStart(2,"0")}</div><p className="experiment-type">{guide.category}</p><h3><Link href={`/guides/${guide.slug}/`}>{guide.title}</Link></h3><p>{guide.description}</p><Link className="card-link" href={`/guides/${guide.slug}/`}>Open lab note <span>↗</span></Link></article>)}</div>

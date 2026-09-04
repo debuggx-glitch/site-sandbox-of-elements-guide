@@ -6,10 +6,11 @@
   "palette": {"primary":"#241c47","secondary":"#55e4e0","accent":"#ff7848","surface":"#f8f6ea","text":"#241c47"},
   "fingerprint": {"navigationModel":"three-zone-lab-header","homepageComposition":"split-console-specimen-plus-experiment-grid","articleComposition":"sticky-field-sequence-plus-notebook-cards","cardSilhouette":"square-lab-cells-with-hard-shadow","contentDensity":"dense-technical","mobileTransformation":"single-column-readout-and-lab-cards","adPlacementPattern":"home-transition-and-guide-notebook-break"},
   "adInventory": [
-    {"slotName":"home_banner_desktop","status":"active","pageTypes":["home"],"position":"after_hero_before_experiment_index","format":"banner","size":"728x90","zoneRef":"homeBannerDesktop","maxPerPage":1,"ga4Placement":"home_banner_desktop"},
-    {"slotName":"home_banner_mobile","status":"active","pageTypes":["home"],"position":"after_hero_before_experiment_index","format":"banner","size":"320x50","zoneRef":"homeBannerMobile","maxPerPage":1,"ga4Placement":"home_banner_mobile"},
-    {"slotName":"guide_native_mid","status":"active","pageTypes":["guide"],"position":"after_section_4","format":"native_banner","size":"responsive","zoneRef":"guideNative","maxPerPage":1,"ga4Placement":"guide_native_mid"},
+    {"slotName":"home_banner_desktop","status":"active","pageTypes":["home"],"position":"before_hero","format":"banner","size":"728x90","zoneRef":"homeBannerDesktop","maxPerPage":1,"ga4Placement":"home_banner_desktop"},
+    {"slotName":"home_banner_mobile","status":"active","pageTypes":["home"],"position":"before_hero","format":"banner","size":"320x50","zoneRef":"homeBannerMobile","maxPerPage":1,"ga4Placement":"home_banner_mobile"},
+    {"slotName":"guide_native_mid","status":"active","pageTypes":["guide"],"position":"after_quick_answer_before_lead_visual","format":"native_banner","size":"responsive","zoneRef":"guideNative","maxPerPage":1,"ga4Placement":"guide_native_mid"},
     {"slotName":"social_global","status":"active","pageTypes":["all"],"position":"global_after_interactive","format":"social_bar","size":"provider_responsive","zoneRef":"socialBar","maxPerPage":1,"ga4Placement":"social_global"},
+    {"slotName":"home_lab_side","status":"planned_inactive","pageTypes":["home"],"position":"desktop_hero_side_rail","format":"banner","size":"300x250","zoneRef":null,"maxPerPage":1,"ga4Placement":"home_lab_side"},
     {"slotName":"guide_lab_rail","status":"planned_inactive","pageTypes":["guide"],"position":"desktop_fact_rail_after_summary","format":"banner","size":"300x250","zoneRef":null,"maxPerPage":1,"ga4Placement":"guide_lab_rail"}
   ]
 }
