@@ -22,6 +22,11 @@ const sources = [
   readFileSync(new URL("../components/ad-placements.tsx", import.meta.url), "utf8"),
 ].join("\n");
 for (const event of ["ad_slot_eligible", "ad_script_loaded", "ad_slot_viewable", "ad_script_error"]) if (!sources.includes(event)) fail(`missing GA4 event ${event}`);
+for (const parameter of ["site_id", "ad_placement", "ad_format", "adsterra_placement_id", "page_type", "page_path", "device_class", "render_context"]) if (!sources.includes(parameter)) fail(`missing GA4 event parameter ${parameter}`);
+if (!sources.includes("sendGa4Event(event")) fail("ad funnel must send events through the GA4 command queue");
+if (!sources.includes('target.gtag("event"')) fail("ad funnel must use the initialized gtag sender when available");
+if (!sources.includes("target.dataLayer!.push(arguments)")) fail("ad funnel must queue the first event before gtag initialization");
+if (sources.includes("target.dataLayer.push({")) fail("raw GTM-style event objects are not valid for this direct GA4 setup");
 const created = (sources.match(/document\.createElement\("script"\)/g) ?? []).length;
 const cfasync = (sources.match(/\.dataset\.cfasync\s*=\s*"false"/g) ?? []).length;
 if (!created || created !== cfasync) fail("every runtime Adsterra script must set data-cfasync=false");

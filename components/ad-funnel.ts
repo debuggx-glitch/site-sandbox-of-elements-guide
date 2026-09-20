@@ -5,13 +5,30 @@ import {type RefObject, useCallback, useEffect, useRef, useState} from "react";
 import type {PlacementBase, PlacementName} from "@/lib/adsterra";
 
 type FunnelEvent = "ad_slot_eligible" | "ad_script_loaded" | "ad_slot_viewable" | "ad_script_error";
-type DataLayerWindow = Window & {dataLayer?: Array<Record<string, unknown>>};
+type Gtag = (command: "event", eventName: FunnelEvent, parameters: Record<string, unknown>) => void;
+type DataLayerWindow = Window & {dataLayer?: unknown[]; gtag?: Gtag};
 
 function pageType(pathname: string) {
   if (pathname === "/") return "home";
   if (pathname.startsWith("/guides/")) return "guide";
   if (["/about", "/privacy", "/contact"].includes(pathname.replace(/\/$/, ""))) return "legal";
   return "other";
+}
+
+function sendGa4Event(eventName: FunnelEvent, parameters: Record<string, unknown>) {
+  const target = window as DataLayerWindow;
+  target.dataLayer ??= [];
+  if (typeof target.gtag === "function") {
+    target.gtag("event", eventName, parameters);
+    return;
+  }
+  (function queueGtagCommand(
+    _command: "event",
+    _eventName: FunnelEvent,
+    _parameters: Record<string, unknown>,
+  ) {
+    target.dataLayer!.push(arguments);
+  })("event", eventName, parameters);
 }
 
 export function useAdFunnel({
@@ -33,11 +50,7 @@ export function useAdFunnel({
     if (!placement) return;
     const key = `${event}:${pathname}:${placement.placementId}`;
     if (sent.current.has(key)) return;
-    sent.current.add(key);
-    const target = window as DataLayerWindow;
-    target.dataLayer ??= [];
-    target.dataLayer.push({
-      event,
+    sendGa4Event(event, {
       site_id: siteId,
       ad_placement: placementName,
       ad_format: placement.format,
@@ -45,10 +58,15 @@ export function useAdFunnel({
       page_type: pageType(pathname),
       page_path: pathname,
       device_class: window.matchMedia("(max-width: 640px)").matches ? "mobile" : "desktop",
+      render_context: placementName.startsWith("home_banner_") ? "first_viewport" : "standard",
     });
+    sent.current.add(key);
   }, [pathname, placement, placementName, siteId]);
 
-  useEffect(() => { track("ad_slot_eligible"); }, [track]);
+  useEffect(() => {
+    track("ad_slot_eligible");
+    if (scriptReady) track("ad_script_loaded");
+  }, [scriptReady, track]);
   useEffect(() => {
     const element = viewRef?.current;
     if (!element || !placement || !scriptReady) return;
