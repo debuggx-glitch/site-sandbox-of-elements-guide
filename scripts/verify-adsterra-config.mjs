@@ -2,9 +2,11 @@ import {readFileSync} from "node:fs";
 
 const config = JSON.parse(readFileSync(new URL("../config/adsterra.json", import.meta.url), "utf8"));
 const fail = (message) => { console.error(`ADSTERRA CONFIG GATE: BLOCKED - ${message}`); process.exit(1); };
-const required = ["socialBar", "homeBannerDesktop", "homeBannerMobile", "homeSideDesktop", "guideNative"];
+const required = ["homeBannerDesktop", "homeBannerMobile", "homeSideDesktop", "guideNative"];
 if (config.schemaVersion !== "adsterra.public-config.v1") fail("unsupported schemaVersion");
 if (!config.siteId || !config.domain) fail("siteId and domain are required");
+if (!config.placements || typeof config.placements !== "object") fail("placements object is required");
+if ("socialBar" in config.placements) fail("SocialBar is prohibited for current and future sites");
 for (const name of required) {
   const placement = config.placements?.[name];
   if (!placement) fail(`missing required placement: ${name}`);
@@ -30,8 +32,8 @@ if (sources.includes("target.dataLayer.push({")) fail("raw GTM-style event objec
 const created = (sources.match(/document\.createElement\("script"\)/g) ?? []).length;
 const cfasync = (sources.match(/\.dataset\.cfasync\s*=\s*"false"/g) ?? []).length;
 if (!created || created !== cfasync) fail("every runtime Adsterra script must set data-cfasync=false");
-if (!sources.includes('data-cfasync="false"')) fail("next/script Adsterra code must set data-cfasync=false");
 if (sources.includes("NEXT_PUBLIC_ADSTERRA_")) fail("public Adsterra code must not use Vercel environment variables");
+if (/SocialBar|social_global|social_bar/.test(sources)) fail("SocialBar source code is prohibited");
 const siteSource = readFileSync(new URL("../lib/site.ts", import.meta.url), "utf8");
 const ga4 = siteSource.match(/ga4MeasurementId:\s*"(G-[A-Z0-9]+)"/)?.[1];
 if (!ga4 || ga4 === "G-REQUIRED") fail("lib/site.ts requires a site-specific source-controlled GA4 Measurement ID");

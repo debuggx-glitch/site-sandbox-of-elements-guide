@@ -1,6 +1,5 @@
 "use client";
 
-import Script from "next/script";
 import {useEffect, useRef, useState} from "react";
 import {useAdFunnel} from "@/components/ad-funnel";
 import {adsterraConfig, type BannerPlacement} from "@/lib/adsterra";
@@ -76,11 +75,4 @@ export function GuideAd() {
   }, [funnel.onScriptError, funnel.onScriptLoad, placement]);
   if (!placement) return null;
   return <aside className="ad-slot" ref={container} data-ad-placement="guide_native_mid"><small>Advertisement</small><div ref={host}/></aside>;
-}
-
-export function SocialBar() {
-  const placement = adsterraConfig.placements.socialBar;
-  const funnel = useAdFunnel({siteId:adsterraConfig.siteId,placementName:"social_global",placement});
-  if (!placement) return null;
-  return <Script id="adsterra-social" src={placement.src} strategy="afterInteractive" data-cfasync="false" onLoad={funnel.onScriptLoad} onError={funnel.onScriptError}/>;
 }
