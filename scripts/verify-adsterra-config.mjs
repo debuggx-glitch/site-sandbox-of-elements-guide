@@ -22,6 +22,8 @@ if (!config.placements.guideNative.containerId) fail("guideNative.containerId is
 const sources = [
   readFileSync(new URL("../components/ad-funnel.ts", import.meta.url), "utf8"),
   readFileSync(new URL("../components/ad-placements.tsx", import.meta.url), "utf8"),
+  readFileSync(new URL("../app/layout.tsx", import.meta.url), "utf8"),
+  readFileSync(new URL("../app/privacy/page.tsx", import.meta.url), "utf8"),
 ].join("\n");
 for (const event of ["ad_slot_eligible", "ad_script_loaded", "ad_slot_viewable", "ad_script_error"]) if (!sources.includes(event)) fail(`missing GA4 event ${event}`);
 for (const parameter of ["site_id", "ad_placement", "ad_format", "adsterra_placement_id", "page_type", "page_path", "device_class", "render_context"]) if (!sources.includes(parameter)) fail(`missing GA4 event parameter ${parameter}`);
